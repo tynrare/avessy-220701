@@ -89,6 +89,6 @@ function randomizePallete() {
 
 	if (colorA == colorB) { randomizePallete(); return; }
 
-	document.body.style.setProperty("--dust-color-a", "#" + palette[colorA]);
-	document.body.style.setProperty("--dust-color-b", "#" + palette[colorB]);
+	document.body.style.setProperty("--color-a", "#" + palette[colorA]);
+	document.body.style.setProperty("--color-b", "#" + palette[colorB]);
 }

@@ -7,10 +7,10 @@ body {
 body {
   width: 100vw;
   height: 100vh;
-  --dust-color-a: #000;
-  --dust-color-b: #fff;
-  background-color: var(--dust-color-a);
-  color: var(--dust-color-b);
+  --color-a: #000;
+  --color-b: #fff;
+  background-color: var(--color-a);
+  color: var(--color-b);
 }
 body.fancy {
   display: flex;
@@ -46,6 +46,12 @@ body.fancy {
 .fancy p {
   padding: 0;
   margin: 0;
+}
+.fancy text h1,
+.fancy text h2,
+.fancy text h3,
+.fancy text .bold {
+  text-shadow: 0.01em 0.01em 0px var(--color-a), 0.02em 0.02em #000;
 }
 .mute {
   font-family: 'Flow';
