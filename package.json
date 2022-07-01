@@ -2,7 +2,8 @@
   "name": "avessy-220701",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "exports": "./index.js",
+  "type": "module",
   "scripts": {
     "start": "node build.js"
   },
@@ -26,6 +27,6 @@
     "stringify": "^5.2.0"
   },
   "dependencies": {
-    "remark": "^14.0.2"
+    "markdown-it": "^13.0.1"
   }
 }

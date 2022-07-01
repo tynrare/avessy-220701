@@ -1,8 +1,8 @@
-const fs = require("fs");
-const pug = require("pug");
-const less = require("less");
-const browserify = require("browserify");
-const babelify = require("babelify");
+import fs from "fs";
+import pug from "pug";
+import less from "less";
+import browserify from "browserify";
+import babelify from "babelify";
 
 function write(file, text) {
   fs.writeFile(file, text, function (err) {
@@ -42,14 +42,14 @@ function build_less() {
 
 function build_js() {
   browserify({ debug: true })
-    .transform("babelify", { presets: ["@babel/preset-env"] })
+    .transform("babelify", { global: true, presets: ["@babel/preset-env"] })
     .transform("stringify", {
       appliesTo: { includeExtensions: [".hjs", ".html"] },
     })
     .require("./index.js", { entry: true })
     .bundle()
     .on("error", function (err) {
-      console.log("Error: " + err.message);
+      console.error("Error: " + err.message, err);
     })
     .pipe(fs.createWriteStream("dist/index.js"));
 
