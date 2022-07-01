@@ -18,6 +18,7 @@ body.fancy {
 	display: flex;
 	font-family: "PoiretOne";
 	font-size: 2.7vw;
+	.noselect();
 
 	@font-face {
 		font-family: "Flow";
@@ -45,9 +46,19 @@ body.fancy {
 
 .mute {
 	font-family: 'Flow';
+	//display: inline; // dust
 }
 
 // dust
 .fancy bb#main text p:nth-last-child(2) {
 	display: inline;
+}
+
+.noselect {
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	-khtml-user-select: none; /* Konqueror HTML */
+	-moz-user-select: none; /* Old versions of Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
 }
